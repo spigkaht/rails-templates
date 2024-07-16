@@ -20,7 +20,7 @@ Same as default plus a Devise install with a generated User model.
 rails new \
   -d postgresql \
   -m https://raw.githubusercontent.com/spigkaht/rails-templates/main/devise.rb \
-  CHANGE_THIS_TO_YOUR_RAILS_APP_NAME \
+  br-app \
   --css tailwind
 
 TAILWIND CSS
