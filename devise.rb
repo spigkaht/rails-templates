@@ -6,9 +6,7 @@ inject_into_file "Gemfile", before: "group :development, :test do" do
   <<~RUBY
     gem "devise"
     gem "autoprefixer-rails"
-    gem "font-awesome-sass", "~> 6.1"
     gem "simple_form", github: "heartcombo/simple_form"
-    gem "sassc-rails"
 
   RUBY
 end
@@ -93,9 +91,9 @@ after_bundle do
     <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
   HTML
   button_to = <<~HTML
-    <div class="d-flex align-items-center">
+    <div>
       <div>Unhappy?</div>
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
     </div>
   HTML
   gsub_file("app/views/devise/registrations/edit.html.erb", link_to, button_to)
